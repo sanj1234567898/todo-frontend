@@ -1,0 +1,10 @@
+.container__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.container__controller {
+  margin-left: 10px;
+}

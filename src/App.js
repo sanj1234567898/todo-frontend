@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@mui/material";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { Route, Routes } from "react-router";
+import { Header } from "./components/Header";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Registration from "./pages/Registration";
+import { fetchAuthMe } from "./redux/slices/auth";
 
 function App() {
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(fetchAuthMe());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Box>
   );
 }
 
