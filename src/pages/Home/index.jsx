@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <Container maxWidth={"lg"}>
       <CreateModal />
-      {isAuth ? (
+      {isAuth || userId ? (
         <>
           {todos.length > 0
             ? todos.map(({ text, _id: id, completed }) => (

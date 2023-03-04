@@ -36,6 +36,7 @@ export default function CreateModal() {
 
       dispatch(postTodo(field));
       handleClose();
+      setText("");
     } catch (err) {
       console.log(err);
       alert("Не удалось добавить запись");

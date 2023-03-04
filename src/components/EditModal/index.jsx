@@ -37,6 +37,7 @@ export default function EditModal({ id }) {
 
       dispatch(patchTodo(field));
       handleClose();
+      setText("");
     } catch (err) {
       console.log(err);
       alert("Не удалось обновить запись");
