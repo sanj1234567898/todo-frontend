@@ -16,14 +16,14 @@ function App() {
   }, []);
 
   return (
-    <Box>
+    <>
       <Header />
       <Routes>
         <Route path="/todo-frontend" element={<Home />} />
         <Route path="/todo-frontend/register" element={<Registration />} />
         <Route path="/todo-frontend/login" element={<Login />} />
       </Routes>
-    </Box>
+    </>
   );
 }
 
