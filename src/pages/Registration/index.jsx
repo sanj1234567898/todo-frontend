@@ -101,13 +101,13 @@ const Registration = () => {
             })}
           />
           <TextField
+            id="outlined-password-input"
             margin="normal"
             required
             fullWidth
             name="password"
             label="Password"
             type="password"
-            id="password"
             autoComplete="current-password"
             helperText={errors.password?.message}
             error={Boolean(errors.password?.message)}
