@@ -67,7 +67,11 @@ export const Todo = ({ text, id, completed }) => {
           {text}
         </Typography>
         <Box
-          sx={{ display: "flex", gap: 2, alignItems: "center", marginLeft: 5 }}
+          sx={{
+            display: "flex",
+            gap: "2px",
+            alignItems: "center",
+          }}
         >
           <Tooltip title={checked ? "Задача выполнена" : "Задача не выполнена"}>
             <Switch
