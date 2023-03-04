@@ -23,7 +23,16 @@ const Home = () => {
     <Container maxWidth={"lg"}>
       <CreateModal />
       {isAuth || userId ? (
-        <>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 2,
+            marginTop: 2,
+            marginBottom: 2,
+          }}
+        >
           {todos.length > 0 ? (
             todos.map(({ text, _id: id, completed }) => (
               <Todo key={id} text={text} completed={completed} id={id} />
@@ -52,7 +61,7 @@ const Home = () => {
               </Typography>
             </Box>
           )}
-        </>
+        </Box>
       ) : (
         <Navigate to={"/todo-frontend/login"} />
       )}

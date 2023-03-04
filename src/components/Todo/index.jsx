@@ -46,7 +46,6 @@ export const Todo = ({ text, id, completed }) => {
     <Container
       maxWidth="sm"
       sx={{
-        marginTop: 3,
         backgroundColor: checked ? "#A5A5A5" : "#474A51",
         borderRadius: 5,
       }}
