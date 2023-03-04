@@ -87,6 +87,8 @@ const Login = () => {
             required
             fullWidth
             label="Password"
+            type="password"
+            autoComplete="current-password"
             error={Boolean(errors.password?.message)}
             helperText={errors.password?.message}
             {...register("password", {
@@ -103,7 +105,11 @@ const Login = () => {
           </Button>
           <Grid container>
             <Grid item>
-              <Link className={styles.link} to="/register" variant="body2">
+              <Link
+                className={styles.link}
+                to="/todo-frontend/register"
+                variant="body2"
+              >
                 {"До сих пор нет аккаунта?"}
               </Link>
             </Grid>
