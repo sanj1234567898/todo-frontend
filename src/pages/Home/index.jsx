@@ -30,7 +30,7 @@ const Home = () => {
             : ""}
         </>
       ) : (
-        <Navigate to={"/login"} />
+        <Navigate to={"/todo-frontend/login"} />
       )}
     </Container>
   );

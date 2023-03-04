@@ -19,9 +19,9 @@ function App() {
     <Box>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Registration />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/todo-frontend" element={<Home />} />
+        <Route path="/todo-frontend/register" element={<Registration />} />
+        <Route path="/todo-frontend/login" element={<Login />} />
       </Routes>
     </Box>
   );

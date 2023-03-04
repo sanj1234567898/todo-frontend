@@ -46,7 +46,7 @@ const Registration = () => {
   };
 
   if (isAuth) {
-    return <Navigate to={"/"} />;
+    return <Navigate to={"/todo-frontend/"} />;
   }
 
   return (
@@ -125,7 +125,11 @@ const Registration = () => {
           </Button>
           <Grid container>
             <Grid item>
-              <Link className={styles.link} to="/login" variant="body2">
+              <Link
+                className={styles.link}
+                to="/todo-frontend/login"
+                variant="body2"
+              >
                 {"Уже есть аккаунт?"}
               </Link>
             </Grid>

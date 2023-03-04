@@ -44,7 +44,7 @@ const Login = () => {
   };
 
   if (isAuth) {
-    return <Navigate to={"/"} />;
+    return <Navigate to={"/todo-frontend/"} />;
   }
 
   return (

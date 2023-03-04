@@ -33,7 +33,7 @@ export const Header = () => {
   return (
     <AppBar sx={{ position: "initial" }}>
       <StyledToolBar>
-        <Link className={styles.logo} to="/">
+        <Link className={styles.logo} to="/todo-frontend/">
           TODO-LIST
         </Link>
 
@@ -55,7 +55,7 @@ export const Header = () => {
               </Link>
             </>
           ) : (
-            <Link to={"/login"}>
+            <Link to={"/todo-frontend/login"}>
               <Button variant="contained" color="error">
                 Войти
               </Button>
