@@ -4,8 +4,8 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
-import { Fab, TextField } from "@mui/material";
-import { Edit } from "@mui/icons-material";
+import { Fab, TextField, Tooltip } from "@mui/material";
+import { Edit, Remove } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { patchTodo } from "../../redux/slices/todo";
 
@@ -47,14 +47,16 @@ export default function EditModal({ id }) {
   return (
     <div>
       <Box sx={{ "& > :not(style)": { m: 1 } }}>
-        <Fab
-          onClick={handleOpen}
-          size="small"
-          color="secondary"
-          aria-label="edit"
-        >
-          <Edit />
-        </Fab>
+        <Tooltip title="Редактировать задачу">
+          <Fab
+            onClick={handleOpen}
+            size="small"
+            color="secondary"
+            aria-label="edit"
+          >
+            <Edit />
+          </Fab>
+        </Tooltip>
       </Box>
       <Modal
         aria-labelledby="transition-modal-title"

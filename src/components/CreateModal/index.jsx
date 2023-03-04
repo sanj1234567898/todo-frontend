@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
-import { Fab, TextField } from "@mui/material";
+import { Fab, TextField, Tooltip } from "@mui/material";
 import { Add } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { postTodo } from "../../redux/slices/todo";
@@ -46,14 +46,16 @@ export default function CreateModal() {
   return (
     <div>
       <Box sx={{ "& > :not(style)": { m: 1 } }}>
-        <Fab
-          onClick={handleOpen}
-          size="large"
-          color="secondary"
-          aria-label="add"
-        >
-          <Add />
-        </Fab>
+        <Tooltip title="Добавить задачу">
+          <Fab
+            onClick={handleOpen}
+            size="large"
+            color="secondary"
+            aria-label="add"
+          >
+            <Add />
+          </Fab>
+        </Tooltip>
       </Box>
       <Modal
         aria-labelledby="transition-modal-title"

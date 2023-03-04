@@ -6,11 +6,13 @@ import {
   Typography,
   Stack,
   Button,
+  TextField,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, selectAuth } from "../../redux/slices/auth";
+import { Box } from "@mui/system";
 
 const StyledToolBar = styled(Toolbar)({
   display: "flex",
@@ -34,7 +36,25 @@ export const Header = () => {
     <AppBar sx={{ position: "initial" }}>
       <StyledToolBar>
         <Link className={styles.logo} to="/todo-frontend/">
-          TODO-LIST
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Typography variant="h7" textTransform={"uppercase"}>
+              todo list
+            </Typography>
+            <Typography
+              variant="p"
+              sx={{
+                fontSize: 14,
+              }}
+            >
+              список задач
+            </Typography>
+          </Box>
         </Link>
 
         <Stack

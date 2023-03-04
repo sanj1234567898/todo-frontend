@@ -1,5 +1,12 @@
 import { Remove } from "@mui/icons-material";
-import { Box, Container, Fab, Switch, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Fab,
+  Switch,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { patchTodoComplete, removeTodo } from "../../redux/slices/todo";
@@ -63,12 +70,14 @@ export const Todo = ({ text, id, completed }) => {
         <Box
           sx={{ display: "flex", gap: 2, alignItems: "center", marginLeft: 5 }}
         >
-          <Switch
-            onClick={onSubmit}
-            checked={checked}
-            onChange={handleChange}
-            inputProps={{ "aria-label": "controlled" }}
-          />
+          <Tooltip title={checked ? "Задача выполнена" : "Задача не выполнена"}>
+            <Switch
+              onClick={onSubmit}
+              checked={checked}
+              onChange={handleChange}
+              inputProps={{ "aria-label": "controlled" }}
+            />
+          </Tooltip>
           {checked ? "" : <EditModal id={id} />}
           <Box sx={{ "& > :not(style)": { m: 1 } }}>
             <Fab
@@ -77,7 +86,9 @@ export const Todo = ({ text, id, completed }) => {
               color="secondary"
               aria-label="delete"
             >
-              <Remove />
+              <Tooltip title={"Удалить задачу"}>
+                <Remove />
+              </Tooltip>
             </Fab>
           </Box>
         </Box>
