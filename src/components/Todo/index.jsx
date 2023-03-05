@@ -11,6 +11,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { patchTodoComplete, removeTodo } from "../../redux/slices/todo";
 import EditModal from "../EditModal";
+import styles from "./Todo.module.css";
 
 export const Todo = ({ text, id, completed }) => {
   const dispatch = useDispatch();
@@ -43,59 +44,63 @@ export const Todo = ({ text, id, completed }) => {
   };
 
   return (
-    <Container
-      maxWidth="sm"
-      sx={{
-        backgroundColor: checked ? "#A5A5A5" : "#474A51",
-        borderRadius: 5,
-      }}
-    >
-      <Box
+    <>
+      <Container
+        maxWidth="sm"
         sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: 2,
+          backgroundColor: checked ? "#A5A5A5" : "#474A51",
+          borderRadius: 5,
         }}
       >
-        <Typography
-          textAlign={"justify"}
-          variant="p"
-          textTransform={"uppercase"}
-          sx={{ color: "#ffff" }}
-        >
-          {text}
-        </Typography>
         <Box
           sx={{
             display: "flex",
-            gap: "2px",
+            justifyContent: "space-between",
             alignItems: "center",
+            padding: 2,
           }}
         >
-          <Tooltip title={checked ? "Задача выполнена" : "Задача не выполнена"}>
-            <Switch
-              onClick={onSubmit}
-              checked={checked}
-              onChange={handleChange}
-              inputProps={{ "aria-label": "controlled" }}
-            />
-          </Tooltip>
-          {checked ? "" : <EditModal id={id} />}
-          <Box sx={{ "& > :not(style)": { m: 1 } }}>
-            <Fab
-              onClick={() => onSubmitRemove(id)}
-              size="small"
-              color="secondary"
-              aria-label="delete"
+          <Typography
+            textAlign={"justify"}
+            variant="p"
+            textTransform={"uppercase"}
+            sx={{ color: "#ffff", wordBreak: "break-all" }}
+          >
+            {text}
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              gap: "2px",
+              alignItems: "center",
+            }}
+          >
+            <Tooltip
+              title={checked ? "Задача выполнена" : "Задача не выполнена"}
             >
-              <Tooltip title={"Удалить задачу"}>
-                <Remove />
-              </Tooltip>
-            </Fab>
+              <Switch
+                onClick={onSubmit}
+                checked={checked}
+                onChange={handleChange}
+                inputProps={{ "aria-label": "controlled" }}
+              />
+            </Tooltip>
+            {checked ? "" : <EditModal id={id} />}
+            <Box sx={{ "& > :not(style)": { m: 1 } }}>
+              <Fab
+                onClick={() => onSubmitRemove(id)}
+                size="small"
+                color="secondary"
+                aria-label="delete"
+              >
+                <Tooltip title={"Удалить задачу"}>
+                  <Remove />
+                </Tooltip>
+              </Fab>
+            </Box>
           </Box>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </>
   );
 };

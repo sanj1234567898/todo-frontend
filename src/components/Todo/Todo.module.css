@@ -1,10 +1,20 @@
-.container__inner {
+.todo__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  max-width: 520px;
+  border-radius: 15px;
+  padding: 20px;
 }
 
-.container__controller {
-  margin-left: 10px;
+.todo__text {
+  word-break: break-all;
+  width: 70%;
+}
+
+.todo__box-controller {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
 }

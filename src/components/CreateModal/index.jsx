@@ -94,7 +94,7 @@ export default function CreateModal() {
                 color="secondary"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Добаваить
+                Добавить
               </Button>
             </Box>
           </Box>

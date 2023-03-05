@@ -37,7 +37,7 @@ const Registration = () => {
     const data = await dispatch(fetchRegister(values));
 
     if (!data.payload) {
-      return alert("Не удалось зарегистрироватьсяы");
+      return alert("Не удалось зарегистрироваться");
     }
 
     if ("token" in data.payload) {

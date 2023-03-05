@@ -55,7 +55,7 @@ const Home = () => {
               <Typography
                 variant="h1"
                 textTransform={"uppercase"}
-                sx={{ fontSize: 30 }}
+                sx={{ fontSize: 30, color: "#000" }}
               >
                 Ищу твои задачи
               </Typography>
