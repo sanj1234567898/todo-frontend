@@ -72,7 +72,7 @@ export default function EditModal({ id }) {
         }}
       >
         <Fade in={open}>
-          <Box borderRadius={2} sx={style}>
+          <div className="modal-box">
             <Box
               component="form"
               noValidate
@@ -82,6 +82,7 @@ export default function EditModal({ id }) {
                 sx={{
                   backgroundColor: "#ffff",
                   border: "2px solid #ab47bc",
+                  borderRadius: 2,
                 }}
                 autoFocus={true}
                 color="primary"
@@ -98,7 +99,7 @@ export default function EditModal({ id }) {
                 Изменить
               </Button>
             </Box>
-          </Box>
+          </div>
         </Fade>
       </Modal>
     </div>

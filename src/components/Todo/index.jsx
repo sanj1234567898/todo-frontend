@@ -11,7 +11,6 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { patchTodoComplete, removeTodo } from "../../redux/slices/todo";
 import EditModal from "../EditModal";
-import styles from "./Todo.module.css";
 
 export const Todo = ({ text, id, completed }) => {
   const dispatch = useDispatch();

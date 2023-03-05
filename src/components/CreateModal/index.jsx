@@ -14,7 +14,6 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
   bgcolor: "#040404",
   border: "2px solid #ab47bc",
   boxShadow: 24,
@@ -71,7 +70,7 @@ export default function CreateModal() {
         }}
       >
         <Fade in={open}>
-          <Box borderRadius={2} sx={style}>
+          <div className={"modal-box"}>
             <Box
               component="form"
               noValidate
@@ -81,6 +80,7 @@ export default function CreateModal() {
                 sx={{
                   backgroundColor: "#ffff",
                   border: "2px solid #ab47bc",
+                  borderRadius: 2,
                 }}
                 autoFocus={true}
                 color="primary"
@@ -97,7 +97,7 @@ export default function CreateModal() {
                 Добавить
               </Button>
             </Box>
-          </Box>
+          </div>
         </Fade>
       </Modal>
     </div>

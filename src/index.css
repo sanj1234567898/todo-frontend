@@ -7,3 +7,21 @@ body {
 a {
   text-decoration: none;
 }
+
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #040404;
+  border: 2px solid #ab47bc;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .modal-box {
+    width: 250px;
+  }
+}
