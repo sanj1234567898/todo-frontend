@@ -9,23 +9,13 @@ import { Add } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { postTodo } from "../../redux/slices/todo";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  bgcolor: "#040404",
-  border: "2px solid #ab47bc",
-  boxShadow: 24,
-  p: 4,
-};
-
 export default function CreateModal() {
   const dispatch = useDispatch();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [text, setText] = React.useState("");
+  const isActive = text.length <= 0;
 
   const onSubmit = async () => {
     try {
@@ -89,6 +79,7 @@ export default function CreateModal() {
                 onChange={(e) => setText(e.target.value)}
               />
               <Button
+                disabled={isActive}
                 onClick={onSubmit}
                 variant="contained"
                 color="secondary"
