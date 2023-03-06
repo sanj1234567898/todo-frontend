@@ -5,7 +5,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import { Fab, TextField, Tooltip } from "@mui/material";
-import { Edit, Remove } from "@mui/icons-material";
+import { Edit } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { patchTodo } from "../../redux/slices/todo";
 
